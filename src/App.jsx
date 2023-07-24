@@ -74,11 +74,13 @@ const App = () => {
         <Box sx={{ padding: '0px 30px' }}>
           <h1 style={{ textAlign: 'center' }}>THINGS TO DO</h1>
           <TodoForm addTodo={addTodo} />
-          <TodoList
-            todos={filteredTodos}
-            changeDone={toggleTodoStatus}
-            removeTodoById={removeTodoById}
-          />
+          <Box sx={{ maxHeight: '390px', overflowY: 'scroll' }}>
+            <TodoList
+              todos={filteredTodos}
+              changeDone={toggleTodoStatus}
+              removeTodoById={removeTodoById}
+            />
+          </Box>
         </Box>
         {todos.length ? <TodoFilter filter={filter} setFilter={setFilter} /> : null}
       </Card>
